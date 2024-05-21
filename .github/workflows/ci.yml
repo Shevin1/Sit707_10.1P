@@ -28,8 +28,9 @@ jobs:
       run: javac -d out -cp lib/junit-platform-console-standalone-1.8.2.jar src/com/ontrack/model/*.java src/com/ontrack/service/*.java
 
     - name: Compile Test code
-      run: javac -d out/test-classes -cp out:lib/junit-platform-console-standalone-1.8.2.jar test/com/ontrack/service/TaskInboxServiceTest.java
+      run: javac -d out/test-classes -cp out:lib/junit-platform-console-standalone-1.8.2.jar src/com/ontrack/model/TaskInboxServiceTest.java
 
     - name: Run Tests
       run: java -jar lib/junit-platform-console-standalone-1.8.2.jar --class-path out:test-classes --scan-class-path
+
 
